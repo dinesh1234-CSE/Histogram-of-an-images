@@ -1,6 +1,4 @@
 # Histogram-of-an-images
-## NAME: AADITHYAN R
-## REG NO: 212222230001
 ## Aim
 To obtain a histogram for finding the frequency of pixels in an Image with pixel values ranging from 0 to 255. Also write the code using OpenCV to perform histogram equalization.
 
@@ -25,22 +23,29 @@ Use calcHist() function to mark the image in graph frequency for gray and color 
 ### Step5:
 The Histogram of gray scale image and color image is shown.
 
+
 ## Program:
+
 ```
-# Developed By: Adchayakiruthika M S
-# Register Number: 212223230005 
+NAME: CH.V.SIVA DINESH KUMAR
+REG NO: 212224040055
+```
+```
+python
 
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
-image = cv2.imread('seed.jpg')
-                   
+image = cv2.imread('iron.jpg')
+
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
 equalized_image = cv2.equalizeHist(gray_image)
+
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
 
 plt.figure(figsize=(10, 7))
 
@@ -59,8 +64,9 @@ plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
 
+
+
 plt.subplot(2, 2, 4)
-hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
 plt.xlim([0, 256])
@@ -71,7 +77,9 @@ plt.show()
 ```
 ## Output:
 
-![seed](https://github.com/user-attachments/assets/0e67b5d6-510d-4ea8-84fd-bc5d4698011c)
+![Screenshot 2025-04-22 201118](https://github.com/user-attachments/assets/a10cefb4-8e8e-49c9-9215-1555236c0406)
+
 
 ## Result: 
 Thus the histogram for finding the frequency of pixels in an image with pixel values ranging from 0 to 255 is obtained. Also,histogram equalization is done for the gray scale image using OpenCV.
+
