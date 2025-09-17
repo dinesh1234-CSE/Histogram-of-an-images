@@ -1,6 +1,6 @@
 # Histogram-of-an-images
-## NAME: AADITHYAN R
-## REG NO: 212222230001
+## NAME: CH.V.S.DINESH KUMAR
+## REG NO : 212224040055
 ## Aim
 To obtain a histogram for finding the frequency of pixels in an Image with pixel values ranging from 0 to 255. Also write the code using OpenCV to perform histogram equalization.
 
@@ -27,8 +27,8 @@ The Histogram of gray scale image and color image is shown.
 
 ## Program:
 ```
-# Developed By: Adchayakiruthika M S
-# Register Number: 212223230005 
+# Developed By: CH.V.S.DINESH KUMAR
+# Register Number: 212224040055
 
 import cv2
 import numpy as np
