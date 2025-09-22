@@ -31,53 +31,118 @@ NAME: CH.V.SIVA DINESH KUMAR
 REG NO: 212224040055
 ```
 ```
-python
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-
-image = cv2.imread('iron.jpg')
-
+```
+```
+# Load the color image
+image = cv2.imread(''/content/puppy.jpg')
+```
+```
+# Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
-
-equalized_image = cv2.equalizeHist(gray_image)
-
-hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
-
-plt.figure(figsize=(10, 7))
-
-plt.subplot(2, 2, 1)
+```
+```
 plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
 plt.axis('off')
+```
+<img width="513" height="411" alt="download" src="https://github.com/user-attachments/assets/5ecbbd37-bc31-4234-8449-0595b5e9ca9f" />
 
-plt.subplot(2, 2, 2)
+```
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(gray_image)
+```
+```
 plt.imshow(equalized_image, cmap='gray')
 plt.title('Equalized Image')
 plt.axis('off')
+```
+<img width="513" height="411" alt="download" src="https://github.com/user-attachments/assets/9a71b593-5d28-48ee-a098-596737044a99" />
 
-plt.subplot(2, 2, 3)
+```
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+```
+```
+plt.plot(hist_original, color='black')
+plt.title('Original Histogram')
+plt.xlim([0, 256])
+```
+<img width="553" height="435" alt="download" src="https://github.com/user-attachments/assets/0dbc43ae-84d3-4b9e-9d1b-db4174bcb920" />
+
+```
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+```
+```
+plt.plot(hist_equalized, color='black')
+plt.title('Equalized Histogram')
+plt.show()
+```
+<img width="552" height="435" alt="download" src="https://github.com/user-attachments/assets/0c6f6375-b5e9-4355-ae46-46ca63a1cb36" />
+
+
+### Histogram for Daerk Image 
+```
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+```
+```
+# Load the color image
+image = cv2.imread('dog.jpg')
+```
+```
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+```
+```
+plt.imshow(gray_image, cmap='gray')
+plt.title('Original Grayscale Image')
+plt.axis('off')
+```
+<img width="515" height="373" alt="download" src="https://github.com/user-attachments/assets/b207e1f7-6e50-4bd4-935f-f033f3568617" />
+
+
+```
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(gray_image)
+```
+```
+plt.imshow(equalized_image, cmap='gray')
+plt.title('Equalized Image')
+plt.axis('off')
+```
+<img width="515" height="373" alt="download" src="https://github.com/user-attachments/assets/1a13646e-d1db-43e5-b5bd-c3b51b65e321" />
+
+
+
+```
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+```
+```
+
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
 
+```
+<img width="562" height="435" alt="download" src="https://github.com/user-attachments/assets/8e6819e9-4bdc-4bd9-a75b-e119d235b2f4" />
 
-
-plt.subplot(2, 2, 4)
-plt.plot(hist_equalized, color='black')
-plt.title('Equalized Histogram')
-plt.xlim([0, 256])
-
-plt.tight_layout()
-plt.show()
 
 ```
-## Output:
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+```
+```
+plt.plot(hist_equalized, color='black')
+plt.title('Equalized Histogram')
+plt.show()
+```
 
-![Screenshot 2025-04-22 201118](https://github.com/user-attachments/assets/a10cefb4-8e8e-49c9-9215-1555236c0406)
+<img width="560" height="435" alt="download" src="https://github.com/user-attachments/assets/48f8be21-626d-49bc-b19e-cda2e599d567" />
+
+
+
 
 
 ## Result: 
